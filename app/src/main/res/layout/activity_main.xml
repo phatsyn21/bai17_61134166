@@ -21,14 +21,17 @@
         android:layout_alignParentLeft="true"
         android:background="#deb887"
         android:text="Nhập tên:" />
-    <Button  android:id="@+id/btnNhap"
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/btnNhap"
+        android:layout_width="239dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/txtTen"
         android:layout_below="@+id/txtTen"
+        android:layout_alignRight="@+id/txtTen"
+        android:layout_marginRight="-28dp"
         android:layout_toRightOf="@+id/textView1"
-        android:textAlignment="center"
-        android:text="Nhập" />
+        android:text="Nhập"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/txtselection"
@@ -42,8 +45,9 @@
         android:id="@+id/lvperson"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/txtselection"
-        android:background="#cccccc" >
-    </ListView>
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="57dp"
+        android:background="#cccccc"></ListView>
 </RelativeLayout>

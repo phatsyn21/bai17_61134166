@@ -1,6 +1,7 @@
 package cntt61.a61134166;
 
 import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -16,32 +17,33 @@ public class MainActivity extends Activity {
     TextView txtchon;
     Button btn;
     ListView lv;
-    ArrayList<String>arrList=null;
-    ArrayAdapter<String> adapter=null;
+    ArrayList<String> arrList = null;
+    ArrayAdapter<String> adapter = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtten=(EditText) findViewById(R.id.txtTen);
-        txtchon=(TextView) findViewById(R.id.txtselection);
+        txtten = (EditText) findViewById(R.id.txtTen);
+        txtchon = (TextView) findViewById(R.id.txtselection);
 
-        lv=(ListView) findViewById(R.id.lvperson);
+        lv = (ListView) findViewById(R.id.lvperson);
         //1. Tạo ArrayList object
-        arrList=new ArrayList<String>();
+        arrList = new ArrayList<String>();
         //2. Gán Data Source (ArrayList object) vào ArrayAdapter
-        adapter=new ArrayAdapter<String>
+        adapter = new ArrayAdapter<String>
                 (this,
                         android.R.layout.simple_list_item_1,
                         arrList);
         //3. gán Adapter vào ListView
         lv.setAdapter(adapter);
 
-        btn=(Button) findViewById(R.id.btnNhap);
+        btn = (Button) findViewById(R.id.btnNhap);
         //4. Xử lý sự kiện nhấn nút Nhập
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                arrList.add(txtten.getText()+"");
+                arrList.add(txtten.getText() + "");
                 adapter.notifyDataSetChanged();
             }
         });
@@ -49,11 +51,11 @@ public class MainActivity extends Activity {
         lv.setOnItemClickListener(new AdapterView
                 .OnItemClickListener() {
             public void onItemClick(
-                    AdapterView<?> arg0,View arg1,
-                    int arg2,long arg3) {
+                    AdapterView<?> arg0, View arg1,
+                    int arg2, long arg3) {
 
-                txtchon.setText("position : "+ arg2+
-                        "; value ="+arrList.get(arg2));
+                txtchon.setText("position : " + arg2 +
+                        "; value =" + arrList.get(arg2));
             }
         });
         //6. xử lý sự kiện Long click
